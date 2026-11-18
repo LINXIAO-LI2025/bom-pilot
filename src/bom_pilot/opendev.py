@@ -12,7 +12,8 @@ DEFAULT_MODEL = "claude-opus-5-5"
 
 
 class OpenDevProvider:
-    def __init__(self, model: str = DEFAULT_MODEL, mode: str = "native"):
+    def __init__(self, model: str = DEFAULT_MODEL, mode: str = "native", *,
+                 max_output_tokens: int = 2048, timeout: float = 75.0, max_request_bytes: int | None = None):
         if mode not in {"native", "json_schema"}:
             raise ValueError("Unsupported provider mode")
         api_key = os.environ.get("OPENDEV_API_KEY")
@@ -22,9 +23,11 @@ class OpenDevProvider:
         httpx = importlib.import_module("httpx")
         self._openai = openai
         self._client = openai.OpenAI(
-            api_key=api_key, base_url=BASE_URL, max_retries=0, timeout=75.0,
-            http_client=httpx.Client(follow_redirects=False, trust_env=True, timeout=75.0),
+            api_key=api_key, base_url=BASE_URL, max_retries=0, timeout=timeout,
+            http_client=httpx.Client(follow_redirects=False, trust_env=True, timeout=timeout),
         )
+        self.max_output_tokens = max_output_tokens
+        self.max_request_bytes = max_request_bytes
         self.model = model
         self.mode = mode
         self.attempts = []
@@ -57,7 +60,7 @@ class OpenDevProvider:
                 yield msg
 
     def _request(self, messages):
-        params = {"model": self.model, "max_tokens": 2048}
+        params = {"model": self.model, "max_tokens": self.max_output_tokens}
         if self.mode == "native":
             params.update(tools=TOOLS, tool_choice="auto")
         else:
@@ -70,6 +73,11 @@ class OpenDevProvider:
                 {"role": "system", "content": messages[0]["content"] + "\n" + schema_instruction},
                 *self._text_history(messages[1:]),
             ]
+        if self.max_request_bytes is not None:
+            size = len(json.dumps({"messages": messages, **params}, ensure_ascii=False,
+                                  separators=(",", ":")).encode("utf-8"))
+            if size > self.max_request_bytes:
+                raise ProviderFailure("request_context_limit")
         try:
             raw = self._client.chat.completions.with_raw_response.create(messages=messages, **params)
         except self._openai.APIStatusError as e:

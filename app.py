@@ -1,0 +1,19 @@
+"""Gradio entry point for local usage and ModelScope."""
+import os
+
+import gradio as gr
+
+from bom_pilot.ui import CSS, build_app
+
+demo = build_app()
+
+if __name__ == "__main__":
+    demo.launch(
+        server_name=os.environ.get("GRADIO_SERVER_NAME", "127.0.0.1"),
+        server_port=int(os.environ.get("GRADIO_SERVER_PORT", "7860")),
+        max_file_size="8mb",
+        css=CSS,
+        theme=gr.themes.Soft(primary_hue="teal", neutral_hue="slate", font=["system-ui", "sans-serif"]),
+        footer_links=[],
+        share=False,
+    )

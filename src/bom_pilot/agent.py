@@ -111,9 +111,11 @@ def feedback(name, result):
 
 
 class DecisionAgent:
-    def __init__(self, provider: Provider, max_turns: int = 12):
+    def __init__(self, provider: Provider, max_turns: int = 12, *, summarize=feedback, stop_after_report=False):
         self.provider = provider
         self.max_turns = max_turns
+        self.summarize = summarize
+        self.stop_after_report = stop_after_report
 
     def run(self, tools: DecisionTools) -> DecisionRun:
         context = asdict(tools.context)
@@ -185,14 +187,16 @@ class DecisionAgent:
                     "call_id": call["id"], "name": name if isinstance(name, str) and name in methods else "unknown", "arguments": logged_args,
                     "source": "model", "result": result,
                 }))
-                encoded = json.dumps(feedback(name, result) if error is None else result, ensure_ascii=False)
+                encoded = json.dumps(self.summarize(name, result) if error is None else result, ensure_ascii=False)
                 if turn.mode == "native":
                     messages.append({"role": "tool", "tool_call_id": call["id"], "content": encoded})
                 else:
                     messages.append({"role": "user", "content": f"Tool result ({name}): {encoded}"})
                 if run.status == "clarification_required":
                     break
-            if run.status == "clarification_required":
+            if run.status == "clarification_required" or (
+                self.stop_after_report and last_plan in reports
+            ):
                 break
         # Final acceptance is enforced even when the model stops prematurely or the API fails.
         if last_plan:
