@@ -1,3 +1,8 @@
--e .[ui]
-gradio==6.29.1
+# ModelScope installs dependencies before copying application files.
+pandas>=2.2,<4
+openpyxl>=3.1,<4
+jsonschema>=4.22,<5
+openai>=1.90,<3
+httpx>=0.27,<1
+gradio==6.32.0
 plotly==6.9.0

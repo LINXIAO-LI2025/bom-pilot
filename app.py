@@ -1,7 +1,12 @@
 """Gradio entry point for local usage and ModelScope."""
 import os
+from pathlib import Path
+import sys
 
 import gradio as gr
+
+# ModelScope installs third-party dependencies before copying this source tree.
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from bom_pilot.ui import CSS, build_app
 

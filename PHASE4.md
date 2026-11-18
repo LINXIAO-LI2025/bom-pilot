@@ -2,7 +2,7 @@
 
 源分支为 LINXIAO-LI2025/bom-pilot 的 feat/gradio-decision-workbench。手动工作流先用 Python 3.12 安装依赖、运行 pytest，并验证 app.py 默认监听 0.0.0.0。随后在独立作业克隆 MONTEC/BOM-Pilot 的默认分支，从选定的 GitHub 提交同步部署文件，正常推送并核对远端提交。
 
-ModelScope 创空间使用 Gradio 6.29.1，requirements.txt 已对齐该版本。空间采用默认 Gradio 入口 app.py，保留 ModelScope README 与 .gitattributes。空间 Python 需满足项目的 Python 3.11+ 要求，GitHub 使用 3.12 验证。部署和测试无需 OpenDev Key。
+部署依赖固定使用 Gradio 6.32.0。ModelScope 在复制项目文件前安装 requirements.txt，因此该文件仅列出第三方依赖。应用通过入口 app.py 从同目录的 src/ 加载项目包。同步保留 ModelScope README 与 .gitattributes。空间 Python 需满足项目的 Python 3.11+ 要求，GitHub 使用 3.12 验证。部署和测试无需 OpenDev Key。
 
 ## 手动运行
 
