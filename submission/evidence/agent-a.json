@@ -1,0 +1,3128 @@
+{
+  "schema_version": "2.0",
+  "scenario": "A",
+  "context": {
+    "goal": "虚构演示：两项物料的 A 供应商报价上涨 20%。检查主要成本及受影响报价，找最低成本采购方案，锁定 AI-004 的原供应商和采购数量。比较原价、维持原采购分配的涨价后成本、新方案成本。",
+    "batch_size": 10,
+    "as_of": "2026-11-18",
+    "currency": "CNY",
+    "budget": null,
+    "reduction_pct": null,
+    "locked_parts": [
+      "AI-004"
+    ],
+    "disruptions": [
+      {
+        "kind": "price_increase_pct",
+        "part_number": "AI-001",
+        "supplier": "虚构供应商-A",
+        "value": "20"
+      },
+      {
+        "kind": "price_increase_pct",
+        "part_number": "AI-003",
+        "supplier": "虚构供应商-A",
+        "value": "20"
+      }
+    ]
+  },
+  "api_attempts": [
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    },
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    },
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    },
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    },
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    },
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    },
+    {
+      "mode": "json_schema",
+      "http_status": 200
+    }
+  ],
+  "status": "pending_review",
+  "log": [
+    {
+      "kind": "context",
+      "round": 0,
+      "data": {
+        "goal": "虚构演示：两项物料的 A 供应商报价上涨 20%。检查主要成本及受影响报价，找最低成本采购方案，锁定 AI-004 的原供应商和采购数量。比较原价、维持原采购分配的涨价后成本、新方案成本。",
+        "batch_size": 10,
+        "as_of": "2026-11-18",
+        "currency": "CNY",
+        "budget": null,
+        "reduction_pct": null,
+        "locked_parts": [
+          "AI-004"
+        ],
+        "disruptions": [
+          {
+            "kind": "price_increase_pct",
+            "part_number": "AI-001",
+            "supplier": "虚构供应商-A",
+            "value": "20"
+          },
+          {
+            "kind": "price_increase_pct",
+            "part_number": "AI-003",
+            "supplier": "虚构供应商-A",
+            "value": "20"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 4590,
+          "completion_tokens": 156,
+          "total_tokens": 4746
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "tool_call",
+      "round": 0,
+      "data": {
+        "call_id": "7fa4afceebd845ad830ec9044888b71e",
+        "name": "analyze_bom",
+        "arguments": {},
+        "source": "model",
+        "result": {
+          "data_notices": [
+            "FICTIONAL / 虚构数据,非实际产品或报价",
+            "FICTIONAL / 虚构数据,非真实商业报价"
+          ],
+          "part_count": 20,
+          "baseline_total": "29822.20",
+          "scenario_incumbent_total": "33902.20",
+          "budget": null,
+          "single_supplier_priced_subtotal": "30434.20",
+          "composition": [
+            {
+              "category": "主板",
+              "priced_subtotal": "1800.00",
+              "share_of_priced_subtotal": "0.0591439893277957035177530541298933436725788750813229853257191",
+              "complete": true
+            },
+            {
+              "category": "包装",
+              "priced_subtotal": "130.00",
+              "share_of_priced_subtotal": "0.00427151034034080080961549835382563037635291875587332671796860",
+              "complete": true
+            },
+            {
+              "category": "存储",
+              "priced_subtotal": "5672.00",
+              "share_of_priced_subtotal": "0.186369281926254016862608512791530580728259655256257762648599",
+              "complete": true
+            },
+            {
+              "category": "散热",
+              "priced_subtotal": "900.00",
+              "share_of_priced_subtotal": "0.0295719946638978517588765270649466718362894375406614926628595",
+              "complete": true
+            },
+            {
+              "category": "电源",
+              "priced_subtotal": "1090.00",
+              "share_of_priced_subtotal": "0.0358149713151651760190837938897687470017283187992455855583521",
+              "complete": true
+            },
+            {
+              "category": "算力",
+              "priced_subtotal": "18540.00",
+              "share_of_priced_subtotal": "0.609183090076295746232856457537901439827562413337626748854907",
+              "complete": true
+            },
+            {
+              "category": "结构",
+              "priced_subtotal": "1216.20",
+              "share_of_priced_subtotal": "0.0399616221224806303434951469070979358747724599299472304184109",
+              "complete": true
+            },
+            {
+              "category": "辅料",
+              "priced_subtotal": "6.00",
+              "share_of_priced_subtotal": "0.000197146631092652345059176847099644478908596250271076617752397",
+              "complete": true
+            },
+            {
+              "category": "连接",
+              "priced_subtotal": "1080.00",
+              "share_of_priced_subtotal": "0.0354863935966774221106518324779360062035473250487937911954315",
+              "complete": true
+            }
+          ],
+          "top_cost_items": [
+            {
+              "part_number": "AI-001",
+              "description": "边缘 AI SoC 模组(虚构)",
+              "line_cost": "18540.00"
+            },
+            {
+              "part_number": "AI-002",
+              "description": "16GB 内存",
+              "line_cost": "3200.00"
+            },
+            {
+              "part_number": "AI-003",
+              "description": "512GB NVMe SSD",
+              "line_cost": "2472.00"
+            },
+            {
+              "part_number": "AI-004",
+              "description": "载板 PCB",
+              "line_cost": "1800.00"
+            },
+            {
+              "part_number": "AI-010",
+              "description": "铝合金机壳",
+              "line_cost": "1200.00"
+            }
+          ],
+          "data_quality": [],
+          "unpriced": []
+        }
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 6943,
+          "completion_tokens": 426,
+          "total_tokens": 7369
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "tool_call",
+      "round": 0,
+      "data": {
+        "call_id": "1248683e1d8942e4b20363af68a0ec52",
+        "name": "find_supplier_options",
+        "arguments": {
+          "part_numbers": [
+            "AI-001",
+            "AI-003",
+            "AI-004",
+            "AI-002",
+            "AI-010"
+          ]
+        },
+        "source": "model",
+        "result": {
+          "options": [
+            {
+              "quote_id": "Q0005",
+              "part_number": "AI-001",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "2160.0000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 6,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0006",
+              "part_number": "AI-001",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "1944.0000000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 7,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0007",
+              "part_number": "AI-001",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "1854.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 8,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0008",
+              "part_number": "AI-001",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "1668.600000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 9,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0013",
+              "part_number": "AI-002",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "160.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 14,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0014",
+              "part_number": "AI-002",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "144.000000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 15,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0015",
+              "part_number": "AI-002",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "164.800000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 16,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0016",
+              "part_number": "AI-002",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "148.320000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 17,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0021",
+              "part_number": "AI-003",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "288.0000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 22,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0022",
+              "part_number": "AI-003",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "259.2000000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 23,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0023",
+              "part_number": "AI-003",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "247.200000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 24,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0024",
+              "part_number": "AI-003",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "222.480000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 25,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0029",
+              "part_number": "AI-004",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "180.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 30,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0030",
+              "part_number": "AI-004",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "162.000000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 31,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0031",
+              "part_number": "AI-004",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "185.400000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 32,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0032",
+              "part_number": "AI-004",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "166.860000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 33,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0077",
+              "part_number": "AI-010",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "120.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 78,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0078",
+              "part_number": "AI-010",
+              "supplier": "虚构供应商-A",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "108.000000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 79,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0079",
+              "part_number": "AI-010",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "123.600000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 80,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            },
+            {
+              "quote_id": "Q0080",
+              "part_number": "AI-010",
+              "supplier": "虚构供应商-B",
+              "quote_date": "2026-11-01",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "111.240000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 81,
+              "data_notice": "FICTIONAL / 虚构数据,非真实商业报价"
+            }
+          ],
+          "unknown_parts": [],
+          "parts_without_quotes": [],
+          "source": "uploaded_quote_snapshot"
+        }
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 14697,
+          "completion_tokens": 259,
+          "total_tokens": 14956
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "tool_call",
+      "round": 0,
+      "data": {
+        "call_id": "0ebfd1b91459421fbbb781e547b0e38e",
+        "name": "simulate_disruption",
+        "arguments": {},
+        "source": "model",
+        "result": {
+          "events": [
+            {
+              "quote_id": "Q0005",
+              "field": "unit_price",
+              "before": "1800.000000",
+              "after": "2160.0000000",
+              "source": "user_supplied_simulation"
+            },
+            {
+              "quote_id": "Q0006",
+              "field": "unit_price",
+              "before": "1620.000000",
+              "after": "1944.0000000",
+              "source": "user_supplied_simulation"
+            },
+            {
+              "quote_id": "Q0021",
+              "field": "unit_price",
+              "before": "240.000000",
+              "after": "288.0000000",
+              "source": "user_supplied_simulation"
+            },
+            {
+              "quote_id": "Q0022",
+              "field": "unit_price",
+              "before": "216.000000",
+              "after": "259.2000000",
+              "source": "user_supplied_simulation"
+            }
+          ],
+          "scenario_incumbent_total": "33902.20",
+          "scope": "user_supplied_events_applied_to_a_copy"
+        }
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 15451,
+          "completion_tokens": 306,
+          "total_tokens": 15757
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "tool_call",
+      "round": 0,
+      "data": {
+        "call_id": "9c4400422dc9482faa0a8ec8b71152f7",
+        "name": "calculate_procurement_plan",
+        "arguments": {
+          "strategy": "split"
+        },
+        "source": "model",
+        "result": {
+          "plan_id": "plan-1",
+          "batch_size": 10,
+          "currency": "CNY",
+          "as_of": "2026-11-18",
+          "strategy": "split",
+          "complete": true,
+          "subtotal": "30434.20",
+          "total_cost": "30434.20",
+          "items": [
+            {
+              "part_number": "AI-001",
+              "description": "边缘 AI SoC 模组(虚构)",
+              "category": "算力",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-001",
+                  "supplier": "虚构供应商-B",
+                  "quote_id": "Q0007",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "1854.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 8,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "18540.00"
+                }
+              ],
+              "subtotal": "18540.00"
+            },
+            {
+              "part_number": "AI-002",
+              "description": "16GB 内存",
+              "category": "存储",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-002",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0013",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "160.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 14,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "3200.00"
+                }
+              ],
+              "subtotal": "3200.00"
+            },
+            {
+              "part_number": "AI-003",
+              "description": "512GB NVMe SSD",
+              "category": "存储",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-003",
+                  "supplier": "虚构供应商-B",
+                  "quote_id": "Q0023",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "247.200000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 24,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "2472.00"
+                }
+              ],
+              "subtotal": "2472.00"
+            },
+            {
+              "part_number": "AI-004",
+              "description": "载板 PCB",
+              "category": "主板",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-004",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0029",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "180.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 30,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "1800.00"
+                }
+              ],
+              "subtotal": "1800.00"
+            },
+            {
+              "part_number": "AI-005",
+              "description": "电源管理 IC",
+              "category": "电源",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-005",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0037",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "12.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 38,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "240.00"
+                }
+              ],
+              "subtotal": "240.00"
+            },
+            {
+              "part_number": "AI-006",
+              "description": "DC 电源适配器",
+              "category": "电源",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-006",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0045",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "85.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 46,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "850.00"
+                }
+              ],
+              "subtotal": "850.00"
+            },
+            {
+              "part_number": "AI-007",
+              "description": "散热器",
+              "category": "散热",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-007",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0053",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "48.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 54,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "480.00"
+                }
+              ],
+              "subtotal": "480.00"
+            },
+            {
+              "part_number": "AI-008",
+              "description": "PWM 风扇",
+              "category": "散热",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-008",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0061",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "18.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "80",
+                  "source_row": 62,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "360.00"
+                }
+              ],
+              "subtotal": "360.00"
+            },
+            {
+              "part_number": "AI-009",
+              "description": "导热垫",
+              "category": "散热",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-009",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0069",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "6.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 70,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "60.00"
+                }
+              ],
+              "subtotal": "60.00"
+            },
+            {
+              "part_number": "AI-010",
+              "description": "铝合金机壳",
+              "category": "结构",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-010",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0077",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "120.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 78,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "1200.00"
+                }
+              ],
+              "subtotal": "1200.00"
+            },
+            {
+              "part_number": "AI-011",
+              "description": "螺丝",
+              "category": "结构",
+              "unit": "EA",
+              "required_qty": "120",
+              "allocated_qty": "120.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-011",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0086",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "0.135000",
+                  "min_qty": "100",
+                  "max_qty": null,
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 87,
+                  "quote_date": "2026-11-01",
+                  "quantity": "120",
+                  "cost": "16.20"
+                }
+              ],
+              "subtotal": "16.20"
+            },
+            {
+              "part_number": "AI-012",
+              "description": "Wi-Fi 模组",
+              "category": "连接",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-012",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0093",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "42.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 94,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "420.00"
+                }
+              ],
+              "subtotal": "420.00"
+            },
+            {
+              "part_number": "AI-013",
+              "description": "天线",
+              "category": "连接",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-013",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0101",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "5.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 102,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "100.00"
+                }
+              ],
+              "subtotal": "100.00"
+            },
+            {
+              "part_number": "AI-014",
+              "description": "以太网 PHY",
+              "category": "连接",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-014",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0109",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "15.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 110,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "300.00"
+                }
+              ],
+              "subtotal": "300.00"
+            },
+            {
+              "part_number": "AI-015",
+              "description": "RJ45 连接器",
+              "category": "连接",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-015",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0117",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "8.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 118,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "160.00"
+                }
+              ],
+              "subtotal": "160.00"
+            },
+            {
+              "part_number": "AI-016",
+              "description": "USB-C 连接器",
+              "category": "连接",
+              "unit": "EA",
+              "required_qty": "20",
+              "allocated_qty": "20.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-016",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0125",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "3.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 126,
+                  "quote_date": "2026-11-01",
+                  "quantity": "20",
+                  "cost": "60.00"
+                }
+              ],
+              "subtotal": "60.00"
+            },
+            {
+              "part_number": "AI-017",
+              "description": "HDMI 连接器",
+              "category": "连接",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-017",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0133",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "4.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 134,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "40.00"
+                }
+              ],
+              "subtotal": "40.00"
+            },
+            {
+              "part_number": "AI-018",
+              "description": "状态 LED",
+              "category": "辅料",
+              "unit": "EA",
+              "required_qty": "30",
+              "allocated_qty": "30.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-018",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0141",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "0.200000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 142,
+                  "quote_date": "2026-11-01",
+                  "quantity": "30",
+                  "cost": "6.00"
+                }
+              ],
+              "subtotal": "6.00"
+            },
+            {
+              "part_number": "AI-019",
+              "description": "包装盒",
+              "category": "包装",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-019",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0149",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "10.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 150,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "100.00"
+                }
+              ],
+              "subtotal": "100.00"
+            },
+            {
+              "part_number": "AI-020",
+              "description": "缓冲棉",
+              "category": "包装",
+              "unit": "EA",
+              "required_qty": "10",
+              "allocated_qty": "10.00",
+              "gap_qty": "0.00",
+              "status": "filled",
+              "allocations": [
+                {
+                  "part_number": "AI-020",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0157",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "3.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 158,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "30.00"
+                }
+              ],
+              "subtotal": "30.00"
+            }
+          ],
+          "issues": []
+        }
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 15708,
+          "completion_tokens": 250,
+          "total_tokens": 15958
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "tool_call",
+      "round": 0,
+      "data": {
+        "call_id": "10e8f3125e834252a32646d54f2da35e",
+        "name": "validate_plan",
+        "arguments": {
+          "plan_id": "plan-1"
+        },
+        "source": "model",
+        "result": {
+          "plan_id": "plan-1",
+          "accepted": true,
+          "constraints": {
+            "inputs_valid": true,
+            "demand_met": true,
+            "quotes_and_orders_valid": true,
+            "locked_allocations_preserved": true,
+            "reported_cost_matches": true,
+            "budget_met": null,
+            "reduction_baseline_available": true
+          },
+          "budget": null,
+          "recomputed_subtotal": "30434.20",
+          "recomputed_total": "30434.20",
+          "budget_overage": null,
+          "gaps": [],
+          "order_errors": [],
+          "locked_part_violations": []
+        }
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 16195,
+          "completion_tokens": 322,
+          "total_tokens": 16517
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "tool_call",
+      "round": 0,
+      "data": {
+        "call_id": "4da05bea746b4cf5bdaa5ba2d511bbc2",
+        "name": "generate_change_report",
+        "arguments": {
+          "plan_id": "plan-1"
+        },
+        "source": "model",
+        "result": {
+          "plan_id": "plan-1",
+          "approval_status": "pending_review",
+          "before_total": "29822.20",
+          "after_total": "30434.20",
+          "currency": "CNY",
+          "delta": "612.00",
+          "cost_change_pct": "2.05216248298247614193453199294485316307985326367605340987586",
+          "scenario_incumbent_subtotal": "33902.20",
+          "scenario_incumbent_total": "33902.20",
+          "scenario_incumbent_viable": true,
+          "before_subtotal": "29822.20",
+          "after_subtotal": "30434.20",
+          "gaps": [],
+          "constraints": {
+            "inputs_valid": true,
+            "demand_met": true,
+            "quotes_and_orders_valid": true,
+            "locked_allocations_preserved": true,
+            "reported_cost_matches": true,
+            "budget_met": null,
+            "reduction_baseline_available": true
+          },
+          "budget_overage": null,
+          "events": [
+            {
+              "quote_id": "Q0005",
+              "field": "unit_price",
+              "before": "1800.000000",
+              "after": "2160.0000000",
+              "source": "user_supplied_simulation"
+            },
+            {
+              "quote_id": "Q0006",
+              "field": "unit_price",
+              "before": "1620.000000",
+              "after": "1944.0000000",
+              "source": "user_supplied_simulation"
+            },
+            {
+              "quote_id": "Q0021",
+              "field": "unit_price",
+              "before": "240.000000",
+              "after": "288.0000000",
+              "source": "user_supplied_simulation"
+            },
+            {
+              "quote_id": "Q0022",
+              "field": "unit_price",
+              "before": "216.000000",
+              "after": "259.2000000",
+              "source": "user_supplied_simulation"
+            }
+          ],
+          "changes": [
+            {
+              "part_number": "AI-001",
+              "before": [
+                {
+                  "part_number": "AI-001",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0005",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "1800.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 6,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "18000.00"
+                }
+              ],
+              "proposed": [
+                {
+                  "part_number": "AI-001",
+                  "supplier": "虚构供应商-B",
+                  "quote_id": "Q0007",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "1854.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 8,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "18540.00"
+                }
+              ],
+              "status": "pending_review"
+            },
+            {
+              "part_number": "AI-003",
+              "before": [
+                {
+                  "part_number": "AI-003",
+                  "supplier": "虚构供应商-A",
+                  "quote_id": "Q0021",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "240.000000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 22,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "2400.00"
+                }
+              ],
+              "proposed": [
+                {
+                  "part_number": "AI-003",
+                  "supplier": "虚构供应商-B",
+                  "quote_id": "Q0023",
+                  "currency": "CNY",
+                  "unit": "EA",
+                  "unit_price": "247.200000",
+                  "min_qty": "1",
+                  "max_qty": "99",
+                  "moq": "1",
+                  "stock_qty": "100000",
+                  "source_row": 24,
+                  "quote_date": "2026-11-01",
+                  "quantity": "10",
+                  "cost": "2472.00"
+                }
+              ],
+              "status": "pending_review"
+            }
+          ],
+          "bom_changes": [],
+          "substitution_candidates": [],
+          "proposal": {
+            "batch_size": 10,
+            "currency": "CNY",
+            "as_of": "2026-11-18",
+            "strategy": "split",
+            "complete": true,
+            "subtotal": "30434.20",
+            "total_cost": "30434.20",
+            "items": [
+              {
+                "part_number": "AI-001",
+                "description": "边缘 AI SoC 模组(虚构)",
+                "category": "算力",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-001",
+                    "supplier": "虚构供应商-B",
+                    "quote_id": "Q0007",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "1854.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 8,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "18540.00"
+                  }
+                ],
+                "subtotal": "18540.00"
+              },
+              {
+                "part_number": "AI-002",
+                "description": "16GB 内存",
+                "category": "存储",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-002",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0013",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "160.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 14,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "3200.00"
+                  }
+                ],
+                "subtotal": "3200.00"
+              },
+              {
+                "part_number": "AI-003",
+                "description": "512GB NVMe SSD",
+                "category": "存储",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-003",
+                    "supplier": "虚构供应商-B",
+                    "quote_id": "Q0023",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "247.200000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 24,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "2472.00"
+                  }
+                ],
+                "subtotal": "2472.00"
+              },
+              {
+                "part_number": "AI-004",
+                "description": "载板 PCB",
+                "category": "主板",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-004",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0029",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "180.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 30,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "1800.00"
+                  }
+                ],
+                "subtotal": "1800.00"
+              },
+              {
+                "part_number": "AI-005",
+                "description": "电源管理 IC",
+                "category": "电源",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-005",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0037",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "12.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 38,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "240.00"
+                  }
+                ],
+                "subtotal": "240.00"
+              },
+              {
+                "part_number": "AI-006",
+                "description": "DC 电源适配器",
+                "category": "电源",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-006",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0045",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "85.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 46,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "850.00"
+                  }
+                ],
+                "subtotal": "850.00"
+              },
+              {
+                "part_number": "AI-007",
+                "description": "散热器",
+                "category": "散热",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-007",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0053",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "48.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 54,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "480.00"
+                  }
+                ],
+                "subtotal": "480.00"
+              },
+              {
+                "part_number": "AI-008",
+                "description": "PWM 风扇",
+                "category": "散热",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-008",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0061",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "18.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "80",
+                    "source_row": 62,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "360.00"
+                  }
+                ],
+                "subtotal": "360.00"
+              },
+              {
+                "part_number": "AI-009",
+                "description": "导热垫",
+                "category": "散热",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-009",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0069",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "6.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 70,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "60.00"
+                  }
+                ],
+                "subtotal": "60.00"
+              },
+              {
+                "part_number": "AI-010",
+                "description": "铝合金机壳",
+                "category": "结构",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-010",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0077",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "120.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 78,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "1200.00"
+                  }
+                ],
+                "subtotal": "1200.00"
+              },
+              {
+                "part_number": "AI-011",
+                "description": "螺丝",
+                "category": "结构",
+                "unit": "EA",
+                "required_qty": "120",
+                "allocated_qty": "120.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-011",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0086",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "0.135000",
+                    "min_qty": "100",
+                    "max_qty": null,
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 87,
+                    "quote_date": "2026-11-01",
+                    "quantity": "120",
+                    "cost": "16.20"
+                  }
+                ],
+                "subtotal": "16.20"
+              },
+              {
+                "part_number": "AI-012",
+                "description": "Wi-Fi 模组",
+                "category": "连接",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-012",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0093",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "42.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 94,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "420.00"
+                  }
+                ],
+                "subtotal": "420.00"
+              },
+              {
+                "part_number": "AI-013",
+                "description": "天线",
+                "category": "连接",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-013",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0101",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "5.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 102,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "100.00"
+                  }
+                ],
+                "subtotal": "100.00"
+              },
+              {
+                "part_number": "AI-014",
+                "description": "以太网 PHY",
+                "category": "连接",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-014",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0109",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "15.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 110,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "300.00"
+                  }
+                ],
+                "subtotal": "300.00"
+              },
+              {
+                "part_number": "AI-015",
+                "description": "RJ45 连接器",
+                "category": "连接",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-015",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0117",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "8.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 118,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "160.00"
+                  }
+                ],
+                "subtotal": "160.00"
+              },
+              {
+                "part_number": "AI-016",
+                "description": "USB-C 连接器",
+                "category": "连接",
+                "unit": "EA",
+                "required_qty": "20",
+                "allocated_qty": "20.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-016",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0125",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "3.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 126,
+                    "quote_date": "2026-11-01",
+                    "quantity": "20",
+                    "cost": "60.00"
+                  }
+                ],
+                "subtotal": "60.00"
+              },
+              {
+                "part_number": "AI-017",
+                "description": "HDMI 连接器",
+                "category": "连接",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-017",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0133",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "4.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 134,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "40.00"
+                  }
+                ],
+                "subtotal": "40.00"
+              },
+              {
+                "part_number": "AI-018",
+                "description": "状态 LED",
+                "category": "辅料",
+                "unit": "EA",
+                "required_qty": "30",
+                "allocated_qty": "30.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-018",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0141",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "0.200000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 142,
+                    "quote_date": "2026-11-01",
+                    "quantity": "30",
+                    "cost": "6.00"
+                  }
+                ],
+                "subtotal": "6.00"
+              },
+              {
+                "part_number": "AI-019",
+                "description": "包装盒",
+                "category": "包装",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-019",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0149",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "10.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 150,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "100.00"
+                  }
+                ],
+                "subtotal": "100.00"
+              },
+              {
+                "part_number": "AI-020",
+                "description": "缓冲棉",
+                "category": "包装",
+                "unit": "EA",
+                "required_qty": "10",
+                "allocated_qty": "10.00",
+                "gap_qty": "0.00",
+                "status": "filled",
+                "allocations": [
+                  {
+                    "part_number": "AI-020",
+                    "supplier": "虚构供应商-A",
+                    "quote_id": "Q0157",
+                    "currency": "CNY",
+                    "unit": "EA",
+                    "unit_price": "3.000000",
+                    "min_qty": "1",
+                    "max_qty": "99",
+                    "moq": "1",
+                    "stock_qty": "100000",
+                    "source_row": 158,
+                    "quote_date": "2026-11-01",
+                    "quantity": "10",
+                    "cost": "30.00"
+                  }
+                ],
+                "subtotal": "30.00"
+              }
+            ],
+            "issues": []
+          },
+          "exceptions": [],
+          "proposed_bom": [
+            {
+              "part_number": "AI-001",
+              "description": "边缘 AI SoC 模组(虚构)",
+              "category": "算力",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-002",
+              "description": "16GB 内存",
+              "category": "存储",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-003",
+              "description": "512GB NVMe SSD",
+              "category": "存储",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-004",
+              "description": "载板 PCB",
+              "category": "主板",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-005",
+              "description": "电源管理 IC",
+              "category": "电源",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-006",
+              "description": "DC 电源适配器",
+              "category": "电源",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-007",
+              "description": "散热器",
+              "category": "散热",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-008",
+              "description": "PWM 风扇",
+              "category": "散热",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-009",
+              "description": "导热垫",
+              "category": "散热",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-010",
+              "description": "铝合金机壳",
+              "category": "结构",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-011",
+              "description": "螺丝",
+              "category": "结构",
+              "quantity_per_unit": "12",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-012",
+              "description": "Wi-Fi 模组",
+              "category": "连接",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-013",
+              "description": "天线",
+              "category": "连接",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-014",
+              "description": "以太网 PHY",
+              "category": "连接",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-015",
+              "description": "RJ45 连接器",
+              "category": "连接",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-016",
+              "description": "USB-C 连接器",
+              "category": "连接",
+              "quantity_per_unit": "2",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-017",
+              "description": "HDMI 连接器",
+              "category": "连接",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-018",
+              "description": "状态 LED",
+              "category": "辅料",
+              "quantity_per_unit": "3",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-019",
+              "description": "包装盒",
+              "category": "包装",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            },
+            {
+              "part_number": "AI-020",
+              "description": "缓冲棉",
+              "category": "包装",
+              "quantity_per_unit": "1",
+              "unit": "EA",
+              "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "model_turn",
+      "round": 0,
+      "data": {
+        "model": "claude-opus-5-5",
+        "mode": "json_schema",
+        "usage": {
+          "prompt_tokens": 16747,
+          "completion_tokens": 309,
+          "total_tokens": 17056
+        },
+        "http_status": 200
+      }
+    },
+    {
+      "kind": "finished",
+      "round": 0,
+      "data": {
+        "status": "pending_review"
+      }
+    }
+  ],
+  "validation": {
+    "accepted": true,
+    "constraints": {
+      "inputs_valid": true,
+      "demand_met": true,
+      "quotes_and_orders_valid": true,
+      "locked_allocations_preserved": true,
+      "reported_cost_matches": true,
+      "budget_met": null,
+      "reduction_baseline_available": true
+    },
+    "budget": null,
+    "recomputed_subtotal": "30434.20",
+    "recomputed_total": "30434.20",
+    "budget_overage": null,
+    "gaps": [],
+    "order_errors": [],
+    "locked_part_violations": []
+  },
+  "report": {
+    "plan_id": "plan-1",
+    "approval_status": "pending_review",
+    "before_total": "29822.20",
+    "after_total": "30434.20",
+    "currency": "CNY",
+    "delta": "612.00",
+    "cost_change_pct": "2.05216248298247614193453199294485316307985326367605340987586",
+    "scenario_incumbent_subtotal": "33902.20",
+    "scenario_incumbent_total": "33902.20",
+    "scenario_incumbent_viable": true,
+    "before_subtotal": "29822.20",
+    "after_subtotal": "30434.20",
+    "gaps": [],
+    "constraints": {
+      "inputs_valid": true,
+      "demand_met": true,
+      "quotes_and_orders_valid": true,
+      "locked_allocations_preserved": true,
+      "reported_cost_matches": true,
+      "budget_met": null,
+      "reduction_baseline_available": true
+    },
+    "budget_overage": null,
+    "events": [
+      {
+        "quote_id": "Q0005",
+        "field": "unit_price",
+        "before": "1800.000000",
+        "after": "2160.0000000",
+        "source": "user_supplied_simulation"
+      },
+      {
+        "quote_id": "Q0006",
+        "field": "unit_price",
+        "before": "1620.000000",
+        "after": "1944.0000000",
+        "source": "user_supplied_simulation"
+      },
+      {
+        "quote_id": "Q0021",
+        "field": "unit_price",
+        "before": "240.000000",
+        "after": "288.0000000",
+        "source": "user_supplied_simulation"
+      },
+      {
+        "quote_id": "Q0022",
+        "field": "unit_price",
+        "before": "216.000000",
+        "after": "259.2000000",
+        "source": "user_supplied_simulation"
+      }
+    ],
+    "changes": [
+      {
+        "part_number": "AI-001",
+        "before": [
+          {
+            "part_number": "AI-001",
+            "supplier": "虚构供应商-A",
+            "quote_id": "Q0005",
+            "currency": "CNY",
+            "unit": "EA",
+            "unit_price": "1800.000000",
+            "min_qty": "1",
+            "max_qty": "99",
+            "moq": "1",
+            "stock_qty": "100000",
+            "source_row": 6,
+            "quote_date": "2026-11-01",
+            "quantity": "10",
+            "cost": "18000.00"
+          }
+        ],
+        "proposed": [
+          {
+            "part_number": "AI-001",
+            "supplier": "虚构供应商-B",
+            "quote_id": "Q0007",
+            "currency": "CNY",
+            "unit": "EA",
+            "unit_price": "1854.000000",
+            "min_qty": "1",
+            "max_qty": "99",
+            "moq": "1",
+            "stock_qty": "100000",
+            "source_row": 8,
+            "quote_date": "2026-11-01",
+            "quantity": "10",
+            "cost": "18540.00"
+          }
+        ],
+        "status": "pending_review"
+      },
+      {
+        "part_number": "AI-003",
+        "before": [
+          {
+            "part_number": "AI-003",
+            "supplier": "虚构供应商-A",
+            "quote_id": "Q0021",
+            "currency": "CNY",
+            "unit": "EA",
+            "unit_price": "240.000000",
+            "min_qty": "1",
+            "max_qty": "99",
+            "moq": "1",
+            "stock_qty": "100000",
+            "source_row": 22,
+            "quote_date": "2026-11-01",
+            "quantity": "10",
+            "cost": "2400.00"
+          }
+        ],
+        "proposed": [
+          {
+            "part_number": "AI-003",
+            "supplier": "虚构供应商-B",
+            "quote_id": "Q0023",
+            "currency": "CNY",
+            "unit": "EA",
+            "unit_price": "247.200000",
+            "min_qty": "1",
+            "max_qty": "99",
+            "moq": "1",
+            "stock_qty": "100000",
+            "source_row": 24,
+            "quote_date": "2026-11-01",
+            "quantity": "10",
+            "cost": "2472.00"
+          }
+        ],
+        "status": "pending_review"
+      }
+    ],
+    "bom_changes": [],
+    "substitution_candidates": [],
+    "proposal": {
+      "batch_size": 10,
+      "currency": "CNY",
+      "as_of": "2026-11-18",
+      "strategy": "split",
+      "complete": true,
+      "subtotal": "30434.20",
+      "total_cost": "30434.20",
+      "items": [
+        {
+          "part_number": "AI-001",
+          "description": "边缘 AI SoC 模组(虚构)",
+          "category": "算力",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-001",
+              "supplier": "虚构供应商-B",
+              "quote_id": "Q0007",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "1854.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 8,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "18540.00"
+            }
+          ],
+          "subtotal": "18540.00"
+        },
+        {
+          "part_number": "AI-002",
+          "description": "16GB 内存",
+          "category": "存储",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-002",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0013",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "160.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 14,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "3200.00"
+            }
+          ],
+          "subtotal": "3200.00"
+        },
+        {
+          "part_number": "AI-003",
+          "description": "512GB NVMe SSD",
+          "category": "存储",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-003",
+              "supplier": "虚构供应商-B",
+              "quote_id": "Q0023",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "247.200000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 24,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "2472.00"
+            }
+          ],
+          "subtotal": "2472.00"
+        },
+        {
+          "part_number": "AI-004",
+          "description": "载板 PCB",
+          "category": "主板",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-004",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0029",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "180.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 30,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "1800.00"
+            }
+          ],
+          "subtotal": "1800.00"
+        },
+        {
+          "part_number": "AI-005",
+          "description": "电源管理 IC",
+          "category": "电源",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-005",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0037",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "12.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 38,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "240.00"
+            }
+          ],
+          "subtotal": "240.00"
+        },
+        {
+          "part_number": "AI-006",
+          "description": "DC 电源适配器",
+          "category": "电源",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-006",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0045",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "85.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 46,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "850.00"
+            }
+          ],
+          "subtotal": "850.00"
+        },
+        {
+          "part_number": "AI-007",
+          "description": "散热器",
+          "category": "散热",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-007",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0053",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "48.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 54,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "480.00"
+            }
+          ],
+          "subtotal": "480.00"
+        },
+        {
+          "part_number": "AI-008",
+          "description": "PWM 风扇",
+          "category": "散热",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-008",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0061",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "18.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "80",
+              "source_row": 62,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "360.00"
+            }
+          ],
+          "subtotal": "360.00"
+        },
+        {
+          "part_number": "AI-009",
+          "description": "导热垫",
+          "category": "散热",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-009",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0069",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "6.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 70,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "60.00"
+            }
+          ],
+          "subtotal": "60.00"
+        },
+        {
+          "part_number": "AI-010",
+          "description": "铝合金机壳",
+          "category": "结构",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-010",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0077",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "120.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 78,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "1200.00"
+            }
+          ],
+          "subtotal": "1200.00"
+        },
+        {
+          "part_number": "AI-011",
+          "description": "螺丝",
+          "category": "结构",
+          "unit": "EA",
+          "required_qty": "120",
+          "allocated_qty": "120.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-011",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0086",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "0.135000",
+              "min_qty": "100",
+              "max_qty": null,
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 87,
+              "quote_date": "2026-11-01",
+              "quantity": "120",
+              "cost": "16.20"
+            }
+          ],
+          "subtotal": "16.20"
+        },
+        {
+          "part_number": "AI-012",
+          "description": "Wi-Fi 模组",
+          "category": "连接",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-012",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0093",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "42.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 94,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "420.00"
+            }
+          ],
+          "subtotal": "420.00"
+        },
+        {
+          "part_number": "AI-013",
+          "description": "天线",
+          "category": "连接",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-013",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0101",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "5.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 102,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "100.00"
+            }
+          ],
+          "subtotal": "100.00"
+        },
+        {
+          "part_number": "AI-014",
+          "description": "以太网 PHY",
+          "category": "连接",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-014",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0109",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "15.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 110,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "300.00"
+            }
+          ],
+          "subtotal": "300.00"
+        },
+        {
+          "part_number": "AI-015",
+          "description": "RJ45 连接器",
+          "category": "连接",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-015",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0117",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "8.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 118,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "160.00"
+            }
+          ],
+          "subtotal": "160.00"
+        },
+        {
+          "part_number": "AI-016",
+          "description": "USB-C 连接器",
+          "category": "连接",
+          "unit": "EA",
+          "required_qty": "20",
+          "allocated_qty": "20.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-016",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0125",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "3.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 126,
+              "quote_date": "2026-11-01",
+              "quantity": "20",
+              "cost": "60.00"
+            }
+          ],
+          "subtotal": "60.00"
+        },
+        {
+          "part_number": "AI-017",
+          "description": "HDMI 连接器",
+          "category": "连接",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-017",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0133",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "4.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 134,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "40.00"
+            }
+          ],
+          "subtotal": "40.00"
+        },
+        {
+          "part_number": "AI-018",
+          "description": "状态 LED",
+          "category": "辅料",
+          "unit": "EA",
+          "required_qty": "30",
+          "allocated_qty": "30.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-018",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0141",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "0.200000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 142,
+              "quote_date": "2026-11-01",
+              "quantity": "30",
+              "cost": "6.00"
+            }
+          ],
+          "subtotal": "6.00"
+        },
+        {
+          "part_number": "AI-019",
+          "description": "包装盒",
+          "category": "包装",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-019",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0149",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "10.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 150,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "100.00"
+            }
+          ],
+          "subtotal": "100.00"
+        },
+        {
+          "part_number": "AI-020",
+          "description": "缓冲棉",
+          "category": "包装",
+          "unit": "EA",
+          "required_qty": "10",
+          "allocated_qty": "10.00",
+          "gap_qty": "0.00",
+          "status": "filled",
+          "allocations": [
+            {
+              "part_number": "AI-020",
+              "supplier": "虚构供应商-A",
+              "quote_id": "Q0157",
+              "currency": "CNY",
+              "unit": "EA",
+              "unit_price": "3.000000",
+              "min_qty": "1",
+              "max_qty": "99",
+              "moq": "1",
+              "stock_qty": "100000",
+              "source_row": 158,
+              "quote_date": "2026-11-01",
+              "quantity": "10",
+              "cost": "30.00"
+            }
+          ],
+          "subtotal": "30.00"
+        }
+      ],
+      "issues": []
+    },
+    "exceptions": [],
+    "proposed_bom": [
+      {
+        "part_number": "AI-001",
+        "description": "边缘 AI SoC 模组(虚构)",
+        "category": "算力",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-002",
+        "description": "16GB 内存",
+        "category": "存储",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-003",
+        "description": "512GB NVMe SSD",
+        "category": "存储",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-004",
+        "description": "载板 PCB",
+        "category": "主板",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-005",
+        "description": "电源管理 IC",
+        "category": "电源",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-006",
+        "description": "DC 电源适配器",
+        "category": "电源",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-007",
+        "description": "散热器",
+        "category": "散热",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-008",
+        "description": "PWM 风扇",
+        "category": "散热",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-009",
+        "description": "导热垫",
+        "category": "散热",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-010",
+        "description": "铝合金机壳",
+        "category": "结构",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-011",
+        "description": "螺丝",
+        "category": "结构",
+        "quantity_per_unit": "12",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-012",
+        "description": "Wi-Fi 模组",
+        "category": "连接",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-013",
+        "description": "天线",
+        "category": "连接",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-014",
+        "description": "以太网 PHY",
+        "category": "连接",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-015",
+        "description": "RJ45 连接器",
+        "category": "连接",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-016",
+        "description": "USB-C 连接器",
+        "category": "连接",
+        "quantity_per_unit": "2",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-017",
+        "description": "HDMI 连接器",
+        "category": "连接",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-018",
+        "description": "状态 LED",
+        "category": "辅料",
+        "quantity_per_unit": "3",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-019",
+        "description": "包装盒",
+        "category": "包装",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      },
+      {
+        "part_number": "AI-020",
+        "description": "缓冲棉",
+        "category": "包装",
+        "quantity_per_unit": "1",
+        "unit": "EA",
+        "data_notice": "FICTIONAL / 虚构数据,非实际产品或报价"
+      }
+    ]
+  },
+  "replans": 0
+}

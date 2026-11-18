@@ -1,0 +1,27 @@
+{
+  "files": {
+    "app.py": "27950feec29a899697e17545039ec4fc69fad3c8dcd646a105680dffbbe3a47a",
+    "examples/ai_box_bom.csv": "b667d52a869d93e288baea11ae2444b81db69bc709c3a9dbdb5fe6cb80160db7",
+    "examples/ai_box_demo.xlsx": "3a994eae1a0346ac2e91c6ca3d34cf8f52f0298a2cb33988f605caf9ef38a074",
+    "examples/supplier_quotes.csv": "d3162335bbadf7d8bb81ba080f4393bc79493ea052046e44fff79ca192727a81",
+    "examples/supplier_quotes_invalid.csv": "07c1e1a906a8493002a8aad42846c2f05e3ca27d07f1e460bab300ce338d3d96",
+    "pyproject.toml": "2a85b436fbb115d7392eeeecad134666ee253cdbf98d323fa9cd30b8d0f46003",
+    "requirements.txt": "0a52b59318500f5cf060d622b5bfedde20e59bb5344cbd1d2ee0795692ff156e",
+    "src/bom_pilot/__init__.py": "ac911a57e189b8c606e11068726d7235a3ba52f78ebed10823db1d7c61f474af",
+    "src/bom_pilot/agent.py": "aaad02f374898b6b1d3b26ea5984a7154d5c243364be4ec00b1cf628b9a83941",
+    "src/bom_pilot/agent_cli.py": "c96aca93d6ceabef06b8d378172ef7ebe48e176f4a63ddbf12ec6f7200b8b85d",
+    "src/bom_pilot/cli.py": "dd1c48fe3ab46e917ea3efcaf55bb99bb5d587b5c1b3cdcc13bc01262f2ecfed",
+    "src/bom_pilot/decision_tools.py": "b9604ab18ccca3def22190241210fe4bf2254128089b4b1f8c53d892e9939d0d",
+    "src/bom_pilot/engine.py": "058d0efccad8d82d535bcc89663cbe5e350c74de5c4fc0096d01b533b7c01278",
+    "src/bom_pilot/export.py": "8cd79294d5737eae14dd04c964267fd727982401e21b852f7b27fce767e6422e",
+    "src/bom_pilot/io.py": "ce85c635bdbc2ea092e78bf166db8fd3696e341b76913b80da69dd7065a5df85",
+    "src/bom_pilot/models.py": "f5547a975e47b944ad69a559e27c1947fe951faacd507117f657ca9c4681c42d",
+    "src/bom_pilot/normalize.py": "5da60591b4bb9d2f51bd71451a0fa35c755af9571d982676c79abe152f2c3182",
+    "src/bom_pilot/opendev.py": "3d2c40ab196d9227a345c41e927770d16502711d43f0fd16c67c34f944f24c30",
+    "src/bom_pilot/procurement.py": "2a22b351871793de555e346c68e24a26522e48a53a218b7d39c44a7da66e57cc",
+    "src/bom_pilot/ui.py": "fbd0691cb9cf1680beb459c430ead56d85aa8b536a95057719bf207b2c004574",
+    "src/bom_pilot/workbench.py": "51fc2886484c6a128cb00d5a3ce4dbce9c575d268d2bc66e9a5a0d105a1d5870",
+    "src/bom_pilot/workbench_agent.py": "2ef67c73235189bd0122ec8b91401def27e4a01d0b29692bce70ced795d7fcf4"
+  },
+  "version": 1
+}

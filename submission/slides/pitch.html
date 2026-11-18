@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>BOM-BOM队 · BOM Pilot 路演</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#e5edef;font-family:"Noto Sans CJK SC",sans-serif;color:#112f40}
+@page{size:1600px 900px;margin:0}.slide{position:relative;width:1600px;height:900px;padding:78px 86px;background:#f6f9f9;overflow:hidden;break-after:page}.slide:last-child{break-after:auto}
+.dark{background:#102d3c;color:#f5fafa}.eyebrow{font-size:21px;font-weight:750;color:#0a776c;letter-spacing:.15em}.dark .eyebrow{color:#71e1c9}h1,h2,h3,p{margin:0}h1{font-size:91px;line-height:1.17;letter-spacing:-.05em}h2{font-size:62px;line-height:1.18;margin-top:17px;letter-spacing:-.03em}h3{font-size:30px}p,li{font-size:24px;line-height:1.52}.sub{color:#4c6370}.dark .sub{color:#b8d3d8}.footer{position:absolute;bottom:30px;left:86px;right:86px;display:flex;justify-content:space-between;font-size:17px;color:#507381;border-top:1px solid #d3e3e6;padding-top:13px}.dark .footer{color:#aec9cc;border-color:#365664}.cols{display:grid;grid-template-columns:1fr 1.19fr;gap:58px;align-items:center}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:#fff;border:1px solid #d2e4e6;border-radius:20px;padding:30px}.label{font-size:19px;font-weight:700;color:#087568}.dark .label{color:#7be0cb}.value{font-size:57px;font-weight:800;line-height:1.17;letter-spacing:-.045em;margin:10px 0 18px}.pill{display:inline-block;padding:8px 16px;background:#daf1ec;color:#07584f;font-weight:700;border-radius:10px;font-size:19px}.warn{background:#f8e7c9;color:#754900}.visual{background:#fff;border:1px solid #c3dbdf;border-radius:20px;overflow:hidden;padding:16px}.visual img{display:block;width:100%}.visual .frame{height:430px;overflow:hidden}.visual .frame img{height:100%;object-fit:cover;object-position:top}.caption{font-size:16px;color:#465f6c;margin-top:11px}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:35px 0 25px}.step{border-radius:12px;background:#e4f2f0;padding:18px 20px;font-size:22px;font-weight:750}.retry{border-left:5px solid #e1a548;padding:14px 20px;background:#fff2da;border-radius:7px;font-size:20px}.trace{background:#fff;border:1px solid #cfe0e2;border-radius:20px;padding:27px 31px;font-size:23px}.trace-line{display:flex;gap:18px;align-items:center;border-top:1px solid #e2eded;padding:11px 0}.trace-line b{white-space:nowrap}.trace-line span{font-size:20px;color:#506875}.rule{border-left:6px solid #67d9c1;padding-left:28px}.qr{width:178px;height:178px;border-radius:12px}.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}.stats .card{background:#183e4e;border-color:#375d68}.stats .value{color:#7be0cb}
+</style>
+<section class="slide dark">
+ <div class="eyebrow">BOM PILOT · AI 硬件采购决策</div>
+ <p style="font-size:27px;margin-top:18px;color:#d2ece6">BOM-BOM队 · 虹桥国际科技周黑客松</p>
+ <div class="cols" style="margin-top:66px;grid-template-columns:1.25fr .75fr">
+  <div><h1>让采购方案<br>经得起验收</h1><p class="sub" style="font-size:34px;margin-top:29px">从生产目标出发，交付可复算的采购建议。</p></div>
+  <div class="rule"><h3>四个决策步骤</h3><p class="sub" style="margin-top:16px">检查报价与库存<br>选择计算工具<br>独立验收<br>失败后调整或说明缺口</p></div>
+ </div>
+ <div class="footer"><span>BOM-BOM队 · ModelScope · MONTEC/BOM-Pilot</span><span>虚构演示数据 · 01 / 05</span></div>
+</section>
+<section class="slide">
+ <div class="eyebrow">统一采购口径</div><h2>从成本表进入采购决策</h2>
+ <div class="cols" style="margin-top:46px">
+  <div><p class="sub">20 项 AI BOX 物料 · 160 条虚构报价</p>
+   <div style="margin:22px 0"><div class="label">单机完整成本</div><div class="value">CNY 2,982.40</div></div>
+   <div><div class="label">10 台批量完整成本</div><div class="value">CNY 29,822.20</div></div>
+   <p class="sub">导入 XLSX / CSV 后，可查数据质量、成本构成和主要成本物料。</p>
+  </div>
+  <div class="visual"><div class="frame"><img src="../screenshots/01-cost-release.png"></div><div class="caption">正式提交复现截图 · Gradio 6.32.0</div></div>
+ </div>
+ <div class="footer"><span>BOM-BOM队 · BOM Pilot · 成本分析</span><span>虚构演示数据 · 02 / 05</span></div>
+</section>
+<section class="slide">
+ <div class="eyebrow">真实模型自主选择工具</div><h2>首次验收失败，Agent 调整采购方案</h2>
+ <div class="flow"><div class="step">采购目标</div><div class="step">模型选择工具</div><div class="step">Python 计算</div><div class="step">独立验收</div></div>
+ <div class="retry">验收失败 → 将实际结果回传模型 → 最多重规划 3 次 → 记录失败原因或保留待审批方案</div>
+ <div class="trace" style="margin-top:26px">
+  <div class="label" style="margin-bottom:9px">历史 OpenDev 场景 B · claude-opus-5-5 · 真实日志节选</div>
+  <div class="trace-line"><b>单供应商规划</b><span>分配 80 / 200，独立验收失败，缺 120 个</span></div>
+  <div class="trace-line"><b>拆单重规划</b><span>模型改用 split，重新分配到两家供应商</span></div>
+  <div class="trace-line"><b>再次验收</b><span>分配 160 / 200，仍缺 40 个，完整成本留空</span></div>
+ </div>
+ <div class="footer"><span>BOM-BOM队 · 执行证据：submission/evidence/agent-b.json</span><span>虚构演示数据 · 03 / 05</span></div>
+</section>
+<section class="slide">
+ <div class="eyebrow">三个场景 · 独立复算</div><h2>结果决定下一步行动</h2>
+ <div class="cards" style="margin-top:64px">
+  <div class="card"><div class="label">两项物料涨价 20%</div><div class="value">少 CNY 3,468</div><p>维持原分配 33,902.20<br>调整后 30,434.20<br>较涨价前仍高 2.05%</p><div class="pill" style="margin-top:25px">验收通过 · 待审批</div></div>
+  <div class="card"><div class="label">100 台缺料</div><div class="value">仍缺 40 个</div><p>风扇需求 200 个<br>分配由 80 增至 160<br>已分配小计 268,099.20</p><div class="pill warn" style="margin-top:25px">数量未通过</div></div>
+  <div class="card"><div class="label">目标降本 8%</div><div class="value">实际降幅 0%</div><p>现有报价最低 29,822.20<br>超预算 2,385.776<br>达到数量要求</p><div class="pill warn" style="margin-top:25px">预算未通过</div></div>
+ </div>
+ <div class="footer"><span>BOM-BOM队 · BOM Pilot · 金额按 CNY，缺料场景未形成完整采购成本</span><span>虚构演示数据 · 04 / 05</span></div>
+</section>
+<section class="slide dark">
+ <div class="eyebrow">可核对的交付</div><h2>让评审看到工具、约束与采购建议</h2>
+ <div class="cols" style="margin-top:52px;grid-template-columns:1.3fr .7fr">
+  <div><div class="stats"><div class="card"><div class="label">自动化测试</div><div class="value">86 通过</div><p class="sub">成本、约束、UI 与部署</p></div><div class="card"><div class="label">方案证据</div><div class="value">Excel</div><p class="sub">分配、验收、缺口、待审批</p></div></div>
+  <p class="sub" style="margin-top:24px">现阶段使用单层 BOM、单币种静态快照。已验证的历史模型执行可单独复核。</p></div>
+  <div class="rule"><img class="qr" src="../poster/studio-qr.png" alt="创空间二维码"><h3 style="margin-top:14px">扫码体验公开工作台</h3><p class="sub">点击「Agent 决策室」的缺料场景</p></div>
+ </div>
+ <div class="footer"><span>BOM-BOM队 · MONTEC/BOM-Pilot · 方案由人审批</span><span>虚构演示数据 · 05 / 05</span></div>
+</section>
+</html>
