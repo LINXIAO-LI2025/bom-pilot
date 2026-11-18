@@ -7,13 +7,15 @@ name = "bom-pilot"
 version = "0.1.0"
 description = "Auditable BOM data and procurement cost engine"
 requires-python = ">=3.11"
-dependencies = ["pandas>=2.2,<4", "openpyxl>=3.1,<4"]
+dependencies = ["pandas>=2.2,<4", "openpyxl>=3.1,<4", "jsonschema>=4.22,<5"]
 
 [project.optional-dependencies]
+agent = ["openai>=1.90,<3", "httpx>=0.27,<1"]
 test = ["pytest>=8,<10"]
 
 [project.scripts]
 bom-pilot = "bom_pilot.cli:main"
+bom-pilot-agent = "bom_pilot.agent_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
