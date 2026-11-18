@@ -59,6 +59,12 @@ https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submis
 
 ## 海报链接
 
+A3 高清 PNG 图片（建议优先提交）：
+
+https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3.png
+
+印刷 PDF：
+
 https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3.pdf
 
 海报 PNG 预览：
