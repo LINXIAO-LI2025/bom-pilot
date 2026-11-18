@@ -10,7 +10,7 @@ ModelScope 创空间使用 Gradio 6.29.1，requirements.txt 已对齐该版本�
 2. 点击 **Run workflow**，选择 **feat/gradio-decision-workbench**，再点击 **Run workflow**。
 3. 打开新的运行，查看 **validate** 和 **deploy** 两个作业。成功的部署步骤会显示经远端确认的魔搭提交 SHA。
 
-GitHub 仓库需要 Actions Secret **MODELSCOPE_TOKEN**，其所属账号须对目标空间有 Git 写权限。Git 用户名默认 MONTEC。若令牌属于另一个有写权限的魔搭账号，在 GitHub 的 **Settings → Secrets and variables → Actions → Variables** 配置 **MODELSCOPE_USERNAME**。令牌经作用域限定的 Git credential helper 传递。
+GitHub 仓库需要 Actions Secret **MODELSCOPE_TOKEN**，值为有权写入目标空间的魔搭账号 SDK 访问令牌。工作流通过魔搭官方登录接口取得 Git 令牌，再以 oauth2 身份经限定仓库路径的 credential helper 认证。
 
 首次部署如遇到同名且内容不同的文件会停止。之后通过魔搭仓库中的部署清单检测人工修改。核对差异并解决冲突后可重新运行。远端分支若在工作流运行期间被推进，普通 Git 推送会拒绝非快进更新。同步范围限于 app.py、requirements.txt、pyproject.toml、src/bom_pilot 下的 Python 源码、四个演示数据文件及部署清单。
 

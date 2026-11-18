@@ -49,5 +49,4 @@ jobs:
       - name: Commit and push managed deployment files
         env:
           MODELSCOPE_TOKEN: ${{ secrets.MODELSCOPE_TOKEN }}
-          MODELSCOPE_USERNAME: ${{ vars.MODELSCOPE_USERNAME || 'MONTEC' }}
         run: bash scripts/deploy_modelscope.sh
