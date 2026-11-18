@@ -1,0 +1,21 @@
+﻿part_number,description,category,quantity_per_unit,unit,data_notice
+AI-001,边缘 AI SoC 模组（虚构）,算力,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-002,16GB 内存,存储,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-003,512GB NVMe SSD,存储,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-004,载板 PCB,主板,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-005,电源管理 IC,电源,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-006,DC 电源适配器,电源,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-007,散热器,散热,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-008,PWM 风扇,散热,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-009,导热垫,散热,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-010,铝合金机壳,结构,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-011,螺丝,结构,12,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-012,Wi-Fi 模组,连接,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-013,天线,连接,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-014,以太网 PHY,连接,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-015,RJ45 连接器,连接,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-016,USB-C 连接器,连接,2,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-017,HDMI 连接器,连接,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-018,状态 LED,辅料,3,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-019,包装盒,包装,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
+AI-020,缓冲棉,包装,1,EA,FICTIONAL / 虚构数据，非实际产品或报价
