@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ ${GITHUB_ACTIONS:-} != true ]]; then
+    echo 'Run this deployment through GitHub Actions.'
+    exit 1
+fi
+
 if [[ -z ${MODELSCOPE_TOKEN:-} ]]; then
     echo '::error::Configure the repository Actions secret MODELSCOPE_TOKEN.'
     exit 1
