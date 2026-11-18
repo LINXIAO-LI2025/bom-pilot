@@ -11,7 +11,7 @@ dependencies = ["pandas>=2.2,<4", "openpyxl>=3.1,<4", "jsonschema>=4.22,<5"]
 
 [project.optional-dependencies]
 agent = ["openai>=1.90,<3", "httpx>=0.27,<1"]
-ui = ["gradio>=6.32,<7", "plotly>=6,<7", "openai>=1.90,<3", "httpx>=0.27,<1"]
+ui = ["gradio>=6.29.1,<7", "plotly>=6,<7", "openai>=1.90,<3", "httpx>=0.27,<1"]
 test = ["pytest>=8,<10"]
 
 [project.scripts]
