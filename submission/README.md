@@ -10,7 +10,8 @@
 | 三场景结果 | [可复算结果与执行顺序](evidence/scenarios.md)，[公开实例验证摘要](evidence/public-check.json) |
 | 五页路演增强版（建议使用） | [PowerPoint](slides/BOM-Pilot-pitch-v2.pptx)，[PDF](slides/BOM-Pilot-pitch-v2.pdf)，[4分30秒讲稿](slides/pitch-notes-v2.md) |
 | 原五页路演 | [PowerPoint](slides/BOM-Pilot-pitch.pptx)，[PDF](slides/BOM-Pilot-pitch.pdf)，[三分钟口播](slides/pitch-notes.md) |
-| A3 竖版海报 | [A3 高清 PNG](poster/BOM-Pilot-A3.png)，[印刷 PDF](poster/BOM-Pilot-A3.pdf)，[PNG 预览](poster/BOM-Pilot-A3-preview.png)，[海报内容](poster/poster-content.md) |
+| A3 视觉海报增强版（建议使用） | [高清 PNG](poster/BOM-Pilot-A3-v2.png)，[印刷 PDF](poster/BOM-Pilot-A3-v2.pdf)，[PNG 预览](poster/BOM-Pilot-A3-v2-preview.png) |
+| 原 A3 竖版海报 | [A3 高清 PNG](poster/BOM-Pilot-A3.png)，[印刷 PDF](poster/BOM-Pilot-A3.pdf)，[PNG 预览](poster/BOM-Pilot-A3-preview.png)，[海报内容](poster/poster-content.md) |
 | Excel 交付样例 | [缺料场景工作台下载](evidence/shortage-release.xlsx) |
 
 路演建议从成本构成切到缺料案。先展示单供应商验收失败，再展示拆单与仍缺 40 个的独立验收。随后打开历史 OpenDev 日志，核对模型曾实际选择拆单并重算。最后展示涨价对照和降本未达目标案例。演示只使用快照数据。

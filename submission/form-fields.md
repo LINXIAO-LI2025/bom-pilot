@@ -61,15 +61,15 @@ https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submis
 
 A3 高清 PNG 图片（建议优先提交）：
 
-https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3.png
+https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3-v2.png
 
 印刷 PDF：
 
-https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3.pdf
+https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3-v2.pdf
 
 海报 PNG 预览：
 
-https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3-preview.png
+https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/poster/BOM-Pilot-A3-v2-preview.png
 
 ## 其他资料链接
 
