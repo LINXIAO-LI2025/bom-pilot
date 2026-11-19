@@ -51,11 +51,11 @@ https://github.com/LINXIAO-LI2025/bom-pilot/tree/fb952ab98a1cf88ffaf22799ad1c478
 
 ## PPT 链接
 
-https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/slides/BOM-Pilot-pitch.pptx
+https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/slides/BOM-Pilot-pitch-v2.pptx
 
 浏览器可预览的 PDF 版本：
 
-https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/slides/BOM-Pilot-pitch.pdf
+https://github.com/LINXIAO-LI2025/bom-pilot/blob/chore/submission-bom-bom/submission/slides/BOM-Pilot-pitch-v2.pdf
 
 ## 海报链接
 

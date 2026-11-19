@@ -8,7 +8,8 @@
 | 正式版本记录 | [源提交、魔搭提交与 Actions 证据](release.md) |
 | 功能与架构 | [作品说明、功能范围、测试及限制](project-brief.md) |
 | 三场景结果 | [可复算结果与执行顺序](evidence/scenarios.md)，[公开实例验证摘要](evidence/public-check.json) |
-| 五页路演 | [PowerPoint](slides/BOM-Pilot-pitch.pptx)，[PDF](slides/BOM-Pilot-pitch.pdf)，[三分钟口播](slides/pitch-notes.md) |
+| 五页路演增强版（建议使用） | [PowerPoint](slides/BOM-Pilot-pitch-v2.pptx)，[PDF](slides/BOM-Pilot-pitch-v2.pdf)，[4分30秒讲稿](slides/pitch-notes-v2.md) |
+| 原五页路演 | [PowerPoint](slides/BOM-Pilot-pitch.pptx)，[PDF](slides/BOM-Pilot-pitch.pdf)，[三分钟口播](slides/pitch-notes.md) |
 | A3 竖版海报 | [A3 高清 PNG](poster/BOM-Pilot-A3.png)，[印刷 PDF](poster/BOM-Pilot-A3.pdf)，[PNG 预览](poster/BOM-Pilot-A3-preview.png)，[海报内容](poster/poster-content.md) |
 | Excel 交付样例 | [缺料场景工作台下载](evidence/shortage-release.xlsx) |
 
@@ -26,3 +27,5 @@
 6. [历史真实 OpenDev 工具调用](screenshots/06-opendev-historical.png)
 
 PPTX 含演讲备注。画面可从同目录 pitch.html 修改后重新导出，印刷海报可从 poster.html 修改。现场入口使用 [ModelScope 公开创空间](https://modelscope.cn/studios/MONTEC/BOM-Pilot)。
+
+路演增强版增加了输入—工具—交付架构、真实 Agent 一次重规划的详细证据，以及三个场景的成本比较基准。共五页，目标讲解4分30秒，预留30秒缓冲。PPTX页面由高清图像组成并附演讲备注，版面可通过 pitch-v2.html 修改。
